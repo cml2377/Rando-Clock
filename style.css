@@ -1,4 +1,9 @@
 /* Layout */
+
+body{
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(0, 0, 0));
+}
+
 .main {
     display: flex;
     padding: 2em;
@@ -8,7 +13,7 @@
 }
 
 .clockContainer,
-#clock {
+#clock, #clock2 {
     width: 100%;
 }
 
@@ -60,7 +65,32 @@
 /* Optional: Use transition for animation. */
 #hour,
 #minute,
-#second {
+#second, #hour2, #minute2, #second2 {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
+}
+
+/* Second clock face */
+
+#second2-arm {
+    stroke: rgb(255, 0, 0);
+    fill: none;
+}
+
+#circle2 {
+    fill: rgb(175, 175, 175);
+}
+
+#clock2Marks {
+    fill: none;
+    stroke: rgb(27, 36, 66);
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+}
+
+#circle2 {
+    fill: none;
+    stroke: rgb(29, 23, 80);
+    stroke-width: 5;
+    stroke-miterlimit: 10;
 }

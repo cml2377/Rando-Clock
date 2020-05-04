@@ -2,6 +2,10 @@ const HOURHAND = document.querySelector("#hour");
 const MINUTEHAND = document.querySelector("#minute");
 const SECONDHAND = document.querySelector("#second");
 
+const HOURHAND2 = document.querySelector("#hour2");
+const MINUTEHAND2 = document.querySelector("#minute2");
+const SECONDHAND2 = document.querySelector("#second2");
+
 var date = new Date();
 console.log(date);
 
@@ -25,6 +29,10 @@ function clock() {
     HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
     MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
     SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
+
+    HOURHAND2.style.transform = "rotate(" + hrPosition + "deg)";
+    MINUTEHAND2.style.transform = "rotate(" + minPosition + "deg)";
+    SECONDHAND2.style.transform = "rotate(" + secPosition + "deg)";
 
 }
 
