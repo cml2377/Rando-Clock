@@ -3,19 +3,29 @@ const MINUTEHAND = document.querySelector("#minute");
 const SECONDHAND = document.querySelector("#second");
 
 var date = new Date();
-
 console.log(date);
 
-let hour = date.getHours();
-let minutes = date.getMinutes();
-let seconds = date.getSeconds();
+let hr = date.getHours();
+let min = date.getMinutes();
+let sec = date.getSeconds();
 
-// Convert the hour, minutes, and seconds into degrees for the position of the hands.
+console.log("Hour: " + hr + " Minute: " + min + " Second: " + sec);
 
-let hrPosition = (hour * 360 / 12) + ((minutes * 360 / 60) / 12);
-let minPosition = (minutes * 360 / 60) + (sec * (360 / 60) / 60);
-let secPosition = seconds * (360 / 60);
+let hrPosition = (hr * 360 / 12) + (min * (360 / 60) / 12);
+let minPosition = (min * 360 / 60) + (sec * (360 / 60) / 60);
+let secPosition = sec * 360 / 60;
 
-HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
-MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
-SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
+
+function clock() {
+
+    hrPosition = hrPosition + (3 / 360);
+    minPosition = minPosition + (6 / 60);
+    secPosition = secPosition + 6;
+
+    HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
+    MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
+    SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
+
+}
+
+var interval = setInterval(clock, 1000);
